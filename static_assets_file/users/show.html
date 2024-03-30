@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<h1>{{ user.first_name }}</h1>
+<div class="row">
+    <div class="col-md-4">
+        <h5>Email:</h5>
+        <p>{{ user.email }}</p>
+        <br>
+        <h5> OTP:</h5>
+        <p>{{ user.otp }}</p>
+    </div>
+</div>
+{% endblock page_content %}

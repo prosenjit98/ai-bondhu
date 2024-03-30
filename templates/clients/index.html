@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<h1>Clients</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">GST</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for client in clients %}
+        <tr>
+            <th scope="row">{{client.id}}</th>
+            <td>{{ client.name }}</td>
+            <td>{{ client.address }}</td>
+            <td>{{ client.gst }}</td>
+            <td>
+                <a href="{% url 'clients_detail' client.id %}"
+                   class="btn btn-primary">
+                    Read More
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</div>
+{% endblock %}
